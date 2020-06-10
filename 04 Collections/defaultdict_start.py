@@ -1,5 +1,6 @@
-# Demonstrate the usage of defaultdict objects
+# Demonstrate the usage of defaultdict object
 
+from collections import defaultdict
 
 def main():
     # define a list of items that we want to count
@@ -7,11 +8,14 @@ def main():
               'apple', 'grape', 'banana', 'banana']
 
     # use a dictionary to count each element
-    fruitCounter = {}
+    fruitCounter = defaultdict(lambda: 100)
 
     # Count the elements in the list
     for fruit in fruits:
-        fruitCounter[fruit] += 1
+        # if fruit in fruitCounter.keys():
+            fruitCounter[fruit] += 1
+        # else:
+        #     fruitCounter[fruit] = 1
 
     # print the result
     for (k, v) in fruitCounter.items():
